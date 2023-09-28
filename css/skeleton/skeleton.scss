@@ -1,0 +1,91 @@
+
+/*** sizes ***/
+$logo-width: 200px;
+$logo-height: 35px;
+$return-width: 40px;
+$footer-heigth: 144px;
+
+/*** colors ***/
+$grey-dark: #353535;
+$grey-mid: #EAEAEA;
+$grey-light: #F6F6F6;
+
+/*** fonts ***/
+@mixin roboto {
+    font-family: "Roboto", sans-serif;
+}
+
+/*** style ***/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @include roboto;
+}
+
+body {
+    background-color: #fff;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+header {
+    max-height: 150px;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    nav {
+        width: 100%;
+        height: calc(100% - 50px);
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        .return {
+            text-align: center;
+            width: $return-width;
+            
+            i {
+                color: #000;
+            }
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            width: calc(100% - $return-width*2);
+            .logo {
+                align-self: center;
+                display: block;
+                background: url("../images/logo/ohmyfood.png") no-repeat top left;
+                width: $logo-width;
+                height: $logo-height;
+                background-size: $logo-width $logo-height;
+            }
+        }
+    }
+}
+
+main {
+    height: 100%;
+    padding-bottom: $footer-heigth;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: $footer-heigth;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: $grey-dark;
+    color: white;
+}
