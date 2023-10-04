@@ -12,7 +12,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -28,9 +29,7 @@
                 <a class="return" href="/">
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
-                <div class="logo-container">
-                    <a href="/" class="logo"></a>
-                </div>
+                <a href="/" class="logo"></a>
             </nav>
             <div class="location">
                 <i class="fa-solid fa-location-dot"></i>
@@ -44,24 +43,22 @@
                 <button>Explorer nos restaurants</button>
             </section>
             <section class="howto">
-                <p>Fonctionnnement</p>
-                <div class="steps">
-                    <div class="step">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        <p>Choisissez un restaurant</p>
-                    </div>
-                    <div class="step">
-                        <i class="fa-solid fa-list-ul"></i>
-                        <p>Composez votre menu</p>
-                    </div>
-                    <div class="step">
-                        <i class="fa-solid fa-store"></i>
-                        <p>Dégustez au restaurant</p>
-                    </div>
+                <p class="section_title">Fonctionnnement</p>
+                <div class="step">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <p>Choisissez un restaurant</p>
+                </div>
+                <div class="step">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <p>Composez votre menu</p>
+                </div>
+                <div class="step">
+                    <i class="fa-solid fa-store"></i>
+                    <p>Dégustez au restaurant</p>
                 </div>
             </section>
             <section class="restaurants">
-                <p>Restaurants</p>
+                <p class="section_title">Restaurants</p>
                 <div class="restaurants-cards">
                     <div class="card">
                         <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
@@ -70,7 +67,11 @@
                                 <p class="card-title">La palette du goût</p>
                                 <p class="card-location">Ménilmontant</p>
                             </div>
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="restaurant1">
+                            <label for="restaurant1">
+                                <i class="fa-regular fa-heart unchecked"></i>
+                                <i class="fa-solid fa-heart checked"></i>
+                            </label>
                         </div>
                     </div>
                     <div class="card">
@@ -80,7 +81,11 @@
                                 <p class="card-title">La note enchantée</p>
                                 <p class="card-location">Charonne</p>
                             </div>
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="restaurant2">
+                            <label for="restaurant2">
+                                <i class="fa-regular fa-heart unchecked"></i>
+                                <i class="fa-solid fa-heart checked"></i>
+                            </label>
                         </div>
                     </div>
                     <div class="card">
@@ -90,7 +95,11 @@
                                 <p class="card-title">À la française</p>
                                 <p class="card-location">Cité Rouge</p>
                             </div>
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="restaurant3">
+                            <label for="restaurant3">
+                                <i class="fa-regular fa-heart unchecked"></i>
+                                <i class="fa-solid fa-heart checked"></i>
+                            </label>
                         </div>
                     </div>
                     <div class="card">
@@ -100,7 +109,11 @@
                                 <p class="card-title">Le délice des sens</p>
                                 <p class="card-location">Folie-Méricourt</p>
                             </div>
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="restaurant4">
+                            <label for="restaurant4">
+                                <i class="fa-regular fa-heart unchecked"></i>
+                                <i class="fa-solid fa-heart checked"></i>
+                            </label>
                         </div>
                     </div>
                 </div>

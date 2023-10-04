@@ -2,11 +2,11 @@
 /*** sizes ***/
 $logo-width: 200px;
 $logo-height: 35px;
-$return-width: 40px;
 $footer-heigth: 144px;
 
 /*** colors ***/
-$grey-dark: #353535;
+$grey-darker: #353535;
+$grey-dark: #7E7E7E;
 $grey-mid: #EAEAEA;
 $grey-light: #F6F6F6;
 
@@ -51,25 +51,15 @@ header {
         align-items: center;
         padding: 15px 0;
         .return {
-            text-align: center;
-            width: $return-width;
-            
-            i {
-                color: #000;
-            }
+            display: none;
         }
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            width: calc(100% - $return-width*2);
-            .logo {
-                align-self: center;
-                display: block;
-                background: url("../images/logo/ohmyfood.png") no-repeat top left;
-                width: $logo-width;
-                height: $logo-height;
-                background-size: $logo-width $logo-height;
-            }
+        .logo {
+            align-self: center;
+            display: block;
+            background: url("../images/logo/ohmyfood.png") no-repeat center;
+            width: 100%;
+            height: $logo-height;
+            background-size: $logo-width $logo-height;
         }
     }
 }
@@ -86,6 +76,6 @@ footer {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    background-color: $grey-dark;
+    background-color: $grey-darker;
     color: white;
 }
