@@ -11,8 +11,8 @@
 
 body {
   background-color: #fff;
-  width: 100vw;
   min-height: 100vh;
+  min-width: 320px;
 }
 
 .main-container {
@@ -196,18 +196,64 @@ section:nth-child(2n+1) {
 
 .restaurants {
   padding: 30px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.restaurants input {
+.restaurants .card {
+  width: 90%;
+  max-width: 340px;
+  height: 250px;
+  border-radius: 15px;
+  margin-top: 30px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.restaurants .card .card-img {
+  width: 100%;
+  max-height: calc(100% - 70px);
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+}
+.restaurants .card .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  height: 70px;
+}
+.restaurants .card .card-content .card-description .card-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.restaurants .card .card-content .card-description .card-location {
+  font-weight: 300;
+  font-size: 17px;
+}
+.restaurants .card .card-content input {
   visibility: hidden;
 }
-.restaurants label .unchecked {
+.restaurants .card .card-content label {
+  display: block;
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+.restaurants .card .card-content label img {
+  position: absolute;
+  transition: opacity 0.15s ease-in;
+  cursor: pointer;
+}
+.restaurants .card .card-content label .unchecked {
   color: #000;
 }
-.restaurants label .checked {
+.restaurants .card .card-content label .checked {
   opacity: 0;
-  background: linear-gradient(#9356DC, #FF79DA);
 }
-.restaurants input:checked + label .checked {
+.restaurants .card .card-content input:checked + label .checked {
   opacity: 1;
 }
 

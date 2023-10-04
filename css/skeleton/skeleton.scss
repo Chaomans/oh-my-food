@@ -26,8 +26,8 @@ $grey-light: #F6F6F6;
 
 body {
     background-color: #fff;
-    width: 100vw;
     min-height: 100vh;
+    min-width: 320px;
 }
 
 .main-container {

@@ -149,27 +149,79 @@ section:nth-child(2n+1) {
 
 .restaurants {
     padding: 30px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    .card {
+        width: 90%;
+        max-width: 340px;
+        height: 250px;
+        border-radius: 15px;
+        margin-top: 30px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
 
-    input {
-        visibility: hidden;
-    }
-
-    label {
-        .unchecked {
-            color: #000;
+        .card-img {
+            width: 100%;
+            max-height: calc(100% - 70px);
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
         }
 
-        .checked {
-            opacity: 0;
-            background: linear-gradient(#9356DC, #FF79DA);;
+        .card-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            height: 70px;
+
+            .card-description {
+                .card-title {
+                    font-weight: 700;
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
+
+                .card-location {
+                    font-weight: 300;
+                    font-size: 17px;
+                }
+            }
+
+            input {
+                visibility: hidden;
+            }
+        
+            label {
+                display: block;
+                position: relative;
+                width: 22px;
+                height: 22px;
+                
+                img {
+                    position: absolute;
+                    transition: opacity 0.15s ease-in;
+                    cursor: pointer;
+                }
+        
+                .unchecked {
+                    color: #000;
+                }
+        
+                .checked {
+                    opacity: 0;
+                }
+            }
+        
+        
+            input:checked + label {
+                .checked {
+                    opacity: 1;
+                }
+            }
         }
     }
-
-
-    input:checked + label {
-        .checked {
-            opacity: 1;
-        }
-    }
-
 }
