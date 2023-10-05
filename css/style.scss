@@ -3,6 +3,8 @@
 
 /*** colors ***/
 $counter-color: #9356DC;
+$new-font-color: #008766;
+$new-bgc-color: #99E2D0;
 
 /*** size ***/
 $counter-size: 24px;
@@ -167,6 +169,8 @@ section:nth-child(2n+1) {
         text-decoration: none;
         box-shadow: 0 4px 15px 0 #00000010;
         transition: all 0.15s linear;
+        color: #000;
+        position: relative;
 
         &:hover {
             transform: scale(1.05);
@@ -174,7 +178,25 @@ section:nth-child(2n+1) {
         }
 
         &:visited {
-            color: inherit;
+            color: #000;
+        }
+
+        &.new:after {
+            content: "Nouveau";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $new-font-color;
+            background-color: $new-bgc-color;
+            font-weight: 500;
+            font-size: 14px;
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            top: 13px;
+            right: 13px;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px 0 #00000015;
         }
 
         .card-img {
@@ -239,28 +261,111 @@ section:nth-child(2n+1) {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767.98px) {
+
+    header {
+        .location {
+            box-shadow: none;
+        }
+    }
+
     .howto {
         display: grid;
         grid-template-areas: 
-            "a a a a"
-            "b b c c"
-            "d d d d";
+            "a a a a a a a a"
+            "b b b b c c c c"
+            ". . d d d d . .";
+        grid-template-columns: repeat(8, 1fr);
         
         .section_title {
             grid-area: a;
+            width: 95%;
+            justify-self: center;
         }
 
         .step:nth-of-type(1) {
             grid-area: b;
+            justify-self: center;
         }
 
         .step:nth-of-type(2) {
             grid-area: c;
+            justify-self: center;
         }
 
         .step:nth-of-type(3) {
             grid-area: d;
+            justify-self: center;
         }
     }
+
+    .restaurants {
+
+        display: grid;
+        grid-template-areas: 
+        "a a a"
+        "b c d"
+        "e f g";
+        grid-template-columns: 5fr 1fr 5fr;
+        grid-template-rows: repeat(3, min-content);
+        padding: 30px 7.5%;
+
+        .section_title {
+            grid-area: a;
+            width: 95%;
+            justify-self: center;
+        }
+
+        .card {
+            max-width: 430px;
+        }
+
+        .card:nth-of-type(1) {
+            grid-area: b;
+            justify-self: center;
+        }
+        .card:nth-of-type(2) {
+            grid-area: d;
+            justify-self: center;
+        }
+        .card:nth-of-type(3) {
+            grid-area: e;
+            justify-self: center;
+        }
+        .card:nth-of-type(4) {
+            grid-area: g;
+            justify-self: center;
+        }
+    }
+}
+
+
+@media (min-width: 1024px) {
+
+    .main-container {
+        // max-width: 1440px;
+
+        .howto {
+            display: grid;
+            grid-template-areas:
+                "a a a"
+                "b c d";
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: min-content min-content;
+            padding: 30px 7.5%;
+            justify-content: space-between;
+            height: fit-content;
+
+            .section_title {
+                margin-bottom: 30px;
+            }
+        }
+
+        .restaurants {
+            .card {
+                max-width: 520px;
+            }
+        }
+    }
+
 }
