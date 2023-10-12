@@ -1,13 +1,9 @@
-@import "./skeleton/_skeleton.scss";
+@import "../skeleton/_skeleton.scss";
 
 /*** sizes ***/
 $return-width: 40px;
 
 header {
-  .location {
-    display: none;
-  }
-
   nav {
     .return {
       display: block;
@@ -21,7 +17,7 @@ header {
 
     .logo {
       width: calc(100% - $return-width * 2);
-      background-position: top left;
+      background-image: url("../../images/logo/ohmyfood.png");
     }
   }
 }

@@ -1,4 +1,3 @@
-
 /*** sizes ***/
 $logo-width: 200px;
 $logo-height: 35px;
@@ -6,75 +5,138 @@ $footer-heigth: 144px;
 
 /*** colors ***/
 $grey-darker: #353535;
-$grey-dark: #7E7E7E;
-$grey-mid: #EAEAEA;
-$grey-light: #F6F6F6;
+$grey-dark: #7e7e7e;
+$grey-mid: #eaeaea;
+$grey-light: #f6f6f6;
 
 /*** fonts ***/
 @mixin roboto {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /*** style ***/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    @include roboto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @include roboto;
 }
 
 body {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .main-container {
-    height: 100%;
-    min-height: 100vh;
-    min-width: 320px;
-    width: 100%;
-    position: relative;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 320px;
+  width: 100%;
+  position: relative;
 }
 
 header {
-    max-height: 150px;
-    height: 10%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  max-height: 150px;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    nav {
-        width: 100%;
-        height: calc(100% - 50px);
-        display: flex;
-        align-items: center;
-        padding: 15px 0;
-        .return {
-            display: none;
-        }
-        .logo {
-            align-self: center;
-            display: block;
-            background: url("../images/logo/ohmyfood.png") no-repeat center;
-            width: 100%;
-            height: $logo-height;
-            background-size: $logo-width $logo-height;
-        }
+  nav {
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    .return {
+      display: none;
     }
+    .logo {
+      align-self: center;
+      display: block;
+      background: url("../images/logo/ohmyfood.png") no-repeat center;
+      width: 100%;
+      height: $logo-height;
+      background-size: $logo-width $logo-height;
+    }
+  }
 }
 
 main {
-    padding-bottom: $footer-heigth;
+  padding-bottom: $footer-heigth;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    height: $footer-heigth;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: $footer-heigth;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: $grey-darker;
+  padding: 22px 25px;
+
+  .footer-links {
     display: flex;
-    justify-content: flex-end;
-    background-color: $grey-darker;
-    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+
+      i {
+        color: #fff;
+        width: 25px;
+      }
+
+      &.highlight {
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .footer-logo {
+    height: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    img {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
+        brightness(103%) contrast(103%);
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  footer {
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: end;
+
+    .footer-logo {
+      margin-bottom: 0;
+      width: 15%;
+      max-width: 240px;
+      padding-left: 5%;
+    }
+
+    .footer-links {
+      height: fit-content;
+      flex-direction: row;
+      width: 70%;
+      max-width: 900px;
+      justify-content: space-between;
+    }
+  }
 }
