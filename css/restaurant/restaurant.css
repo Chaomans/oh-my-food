@@ -120,6 +120,7 @@ footer .footer-logo img {
   }
 }
 /*** sizes ***/
+/*** colors***/
 header nav .return {
   display: block;
   text-align: center;
@@ -131,4 +132,180 @@ header nav .return i {
 header nav .logo {
   width: calc(100% - 80px);
   background-image: url("../../images/logo/ohmyfood.png");
+}
+
+.bg-image {
+  width: 100%;
+  height: 275px;
+}
+.bg-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+input {
+  visibility: hidden;
+}
+
+.menu {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f6f6;
+}
+.menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 30px;
+  top: -30px;
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+  background-color: #f6f6f6;
+}
+.menu .restaurant {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 5%;
+}
+.menu .restaurant h1 {
+  font-family: "Shrikhand", "Roboto", sans-serif;
+  font-size: 28px;
+}
+.menu .restaurant input:checked + label .checked {
+  opacity: 1;
+}
+.menu .restaurant label {
+  display: flex;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  margin: 0 20px;
+}
+.menu .restaurant label img {
+  position: absolute;
+  transition: opacity 0.15s ease-in;
+  cursor: pointer;
+}
+.menu .restaurant label .unchecked {
+  color: #000;
+}
+.menu .restaurant label .checked {
+  opacity: 0;
+}
+.menu .category {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 5%;
+  margin: 30px 0;
+}
+.menu .category .category-title {
+  text-transform: uppercase;
+  position: relative;
+  height: 27px;
+}
+.menu .category .category-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  border-bottom: 3px solid #99e2d0;
+}
+.menu .category input:checked + .card .select {
+  transform: translateX(0%);
+  width: 70px;
+}
+.menu .category .card {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.062745098);
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s linear;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.menu .category .card .card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.menu .category .card .card-content .title {
+  font-size: 18px;
+  font-weight: 500;
+}
+.menu .category .card .card-content .details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.menu .category .card .card-content .details .desc {
+  font-size: 15px;
+  font-weight: 300;
+}
+.menu .category .card .card-content .details .price {
+  font-size: 15px;
+  font-weight: 700;
+}
+.menu .category .card .select {
+  width: 0;
+  height: 100%;
+  background-color: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+  transform: translateX(100%);
+  transition: all 0.2s linear;
+}
+.menu .category .card .select i {
+  color: #fff;
+}
+.menu .category .card:hover {
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1450980392);
+}
+.menu .category .card:hover .select {
+  transform: translateX(0%);
+  width: 70px;
+}
+.menu button {
+  position: relative;
+  padding: 16px 60px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(#ff79da, #9356dc);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1450980392);
+  transition: all 0.2s;
+}
+.menu button:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2078431373);
+}
+.menu button:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.0823529412);
 }/*# sourceMappingURL=restaurant.css.map */

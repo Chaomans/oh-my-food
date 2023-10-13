@@ -2,6 +2,15 @@
 
 /*** sizes ***/
 $return-width: 40px;
+$curve-height: 30px;
+
+/*** colors***/
+$tertiary: #99e2d0;
+
+@mixin slide-params {
+  transform: translateX(0%);
+  width: 70px;
+}
 
 header {
   nav {
@@ -18,6 +27,204 @@ header {
     .logo {
       width: calc(100% - $return-width * 2);
       background-image: url("../../images/logo/ohmyfood.png");
+    }
+  }
+}
+
+.bg-image {
+  width: 100%;
+  height: 275px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+input {
+  visibility: hidden;
+}
+
+.menu {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $grey-light;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: $curve-height;
+    top: -$curve-height;
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+    background-color: $grey-light;
+  }
+
+  .restaurant {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 5%;
+
+    h1 {
+      font-family: "Shrikhand", "Roboto", sans-serif;
+      font-size: 28px;
+    }
+
+    input:checked + label {
+      .checked {
+        opacity: 1;
+      }
+    }
+
+    label {
+      display: flex;
+      position: relative;
+      width: 22px;
+      height: 22px;
+      margin: 0 20px;
+
+      img {
+        position: absolute;
+        transition: opacity 0.15s ease-in;
+        cursor: pointer;
+      }
+
+      .unchecked {
+        color: #000;
+      }
+
+      .checked {
+        opacity: 0;
+      }
+    }
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 5%;
+    margin: 30px 0;
+
+    .category-title {
+      text-transform: uppercase;
+      position: relative;
+      height: 27px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        border-bottom: 3px solid $tertiary;
+      }
+    }
+
+    input:checked + .card .select {
+      @include slide-params();
+    }
+
+    .card {
+      display: flex;
+      height: 70px;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 4px 15px 0 #00000010;
+      border-radius: 15px;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.2s linear;
+      user-select: none;
+
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+
+        .title {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        .details {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+
+          .desc {
+            font-size: 15px;
+            font-weight: 300;
+          }
+
+          .price {
+            font-size: 15px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .select {
+        width: 0;
+        height: 100%;
+        background-color: $tertiary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 15px 15px 0;
+        transform: translateX(100%);
+        transition: all 0.2s linear;
+
+        i {
+          color: #fff;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 4px 15px 0 #00000025;
+
+        .select {
+          @include slide-params();
+        }
+      }
+    }
+  }
+
+  button {
+    position: relative;
+    padding: 16px 60px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(#ff79da, #9356dc);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px 0 #00000025;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: 0 4px 10px 0 #00000035;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #ffffff15;
+      }
     }
   }
 }
