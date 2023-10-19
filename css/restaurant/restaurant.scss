@@ -53,6 +53,8 @@ input {
   justify-content: space-between;
   align-items: center;
   background-color: $grey-light;
+  width: 100%;
+  margin: 0;
 
   &::before {
     content: "";
@@ -139,10 +141,18 @@ input {
       box-shadow: 0 4px 15px 0 #00000010;
       border-radius: 15px;
       position: relative;
-      cursor: pointer;
       overflow: hidden;
       transition: all 0.2s linear;
       user-select: none;
+
+      .clickable {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
 
       .card-content {
         display: flex;
@@ -155,6 +165,10 @@ input {
         .title {
           font-size: 18px;
           font-weight: 500;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          height: 50%;
         }
 
         .details {
@@ -165,6 +179,9 @@ input {
           .desc {
             font-size: 15px;
             font-weight: 300;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
           }
 
           .price {
@@ -225,6 +242,28 @@ input {
         left: 0;
         background: #ffffff15;
       }
+    }
+  }
+}
+
+@media (min-width: 767.98px) {
+  .menu {
+    width: 90%;
+    margin: 0 auto;
+
+    .restaurant {
+      justify-content: center;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    max-width: 1055px;
+
+    .category {
+      max-width: 750px;
+      margin: 30px auto;
     }
   }
 }
