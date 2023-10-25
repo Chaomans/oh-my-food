@@ -18,11 +18,12 @@ $counter-size: 24px;
   bottom: 0;
   right: 0;
   z-index: 10;
-  background-color: #ffffff80;
+  background-color: #ffffffab;
   animation: hide 0.1s ease 1.5s forwards;
 
   img {
     animation: loader 0.6s ease infinite;
+    max-width: 60%;
   }
 
   @keyframes loader {
@@ -200,7 +201,8 @@ section:nth-child(2n + 1) {
     visibility: hidden;
   }
 
-  input:checked + label {
+  input:checked + label,
+  label:hover {
     .checked {
       opacity: 1;
     }

@@ -131,11 +131,12 @@ footer .footer-logo img {
   bottom: 0;
   right: 0;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.5019607843);
+  background-color: rgba(255, 255, 255, 0.6705882353);
   animation: hide 0.1s ease 1.5s forwards;
 }
 .loader img {
   animation: loader 0.6s ease infinite;
+  max-width: 60%;
 }
 @keyframes loader {
   0% {
@@ -298,7 +299,8 @@ section:nth-child(2n+1) {
 .restaurants input {
   visibility: hidden;
 }
-.restaurants input:checked + label .checked {
+.restaurants input:checked + label .checked,
+.restaurants label:hover .checked {
   opacity: 1;
 }
 .restaurants label {

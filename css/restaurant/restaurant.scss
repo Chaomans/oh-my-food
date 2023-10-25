@@ -78,7 +78,8 @@ input {
       font-size: 28px;
     }
 
-    input:checked + label {
+    input:checked + label,
+    label:hover {
       .checked {
         opacity: 1;
       }
@@ -113,6 +114,18 @@ input {
     width: 100%;
     padding: 0 5%;
     margin: 30px 0;
+
+    &.fadein {
+      &.starter {
+        animation: fadein 0.4s ease-in;
+      }
+      &.main {
+        animation: fadein 0.4s ease-in 0.15s;
+      }
+      &.dessert {
+        animation: fadein 0.4s ease-in 0.3s;
+      }
+    }
 
     .category-title {
       text-transform: uppercase;
@@ -213,6 +226,17 @@ input {
         .select {
           @include slide-params();
         }
+      }
+    }
+
+    @keyframes fadein {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
   }
