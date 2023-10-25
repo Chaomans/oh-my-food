@@ -220,13 +220,13 @@ input {
         }
       }
 
-      &:hover {
-        box-shadow: 0 4px 15px 0 #00000025;
+      // &:hover {
+      //   box-shadow: 0 4px 15px 0 #00000025;
 
-        .select {
-          @include slide-params();
-        }
-      }
+      //   .select {
+      //     @include slide-params();
+      //   }
+      // }
     }
 
     @keyframes fadein {
@@ -288,6 +288,16 @@ input {
     .category {
       max-width: 750px;
       margin: 30px auto;
+
+      .card {
+        &:hover {
+          box-shadow: 0 4px 15px 0 #00000025;
+
+          .select {
+            @include slide-params();
+          }
+        }
+      }
     }
   }
 }

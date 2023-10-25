@@ -302,13 +302,6 @@ input {
 .menu .category .card .select i {
   color: #fff;
 }
-.menu .category .card:hover {
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1450980392);
-}
-.menu .category .card:hover .select {
-  transform: translateX(0%);
-  width: 70px;
-}
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -362,5 +355,12 @@ input {
   .menu .category {
     max-width: 750px;
     margin: 30px auto;
+  }
+  .menu .category .card:hover {
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1450980392);
+  }
+  .menu .category .card:hover .select {
+    transform: translateX(0%);
+    width: 70px;
   }
 }/*# sourceMappingURL=restaurant.css.map */
